@@ -4,11 +4,10 @@ console.log(button)
 
 let output = ""
 button.forEach( buttonClick => {
-    buttonClick.addEventListener('click', function(click){
-            // console.log(click.target.textContent);
-            const value = click.target.textContent;
+    buttonClick.addEventListener('click', function(click){   //buttonClick tells us that for each button is clicked this click function should be done
+            const value = click.target.textContent; //if user clicks on any button then that is stored in the vlaue variable
             if(click.target.id === "result-btn"){
-                output = eval(output);
+                output = eval(output); 
             }
             else{
                 output += value;
