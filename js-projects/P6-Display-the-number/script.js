@@ -2,16 +2,14 @@ const inputField = document.querySelector('#input');
 const result = document.querySelector('.display');
 const submitBtn = document.querySelector('#submit');
 
-submitBtn.addEventListener('click', () => {
-    const inputValue = inputField.value
-    result.textContent = `number is: ${inputValue}`
+inputField.addEventListener("input", function(){
+    let inputValue = Number(inputField.value);
+    console.log(inputValue)
+
+    if(isNaN(inputValue)){
+        alert('Enter the valid number')
+    }
+    else{
+        result.textContent = `Entered Number is: ${inputValue}`;
+    }
 })
-
-// const inputField = document.querySelector('#input'); // Removed .value from here
-// const result = document.querySelector('.display');
-// const submitBtn = document.querySelector('#submit');
-
-// submitBtn.addEventListener('click', () => {
-//     const inputValue = inputField.value; // Reads the value at the time of the click
-//     result.textContent = `The number is : ${inputValue}`;
-// });
