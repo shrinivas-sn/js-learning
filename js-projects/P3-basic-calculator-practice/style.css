@@ -50,15 +50,11 @@ body{
 .btn-div{
     height: 300px;
     width: 80%;
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     justify-content: center;
-    align-items: center;
-
+    align-items:center;
     position: absolute;
     top: 50px;
     padding: 10px;
@@ -69,10 +65,56 @@ body{
     height: 40px;
     width: 40px;
     border: 0.5px solid black;
-    border-radius: 50%;
-    background-color: aqua;
+    border-radius: 15px;
+    background: radial-gradient(circle, rgb(203, 39, 121),rgb(168, 46, 216));
     position: relative;
     left: 7px;
+}
+
+#multiply{
+    height: 40px;
+    width: 40px;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 4;
+    grid-column-end: 4;
+}
+#minus{
+    height: 40px;
+    width: 40px;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 4;
+}
+#plus{
+    height: 80px;
+    width: 40px;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    grid-column-start: 4;
+    grid-column-end: 4;
+}
+
+#result-btn{
+    height: 40px;
+    width: 80px;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+#clear-btn{
+    height: 40px;
+    width: 80px;
+    background-color: yellow;
+    border: 0.5px solid black;
+    border-radius: 15px;
+    background: radial-gradient(circle, rgb(203, 39, 121),rgb(168, 46, 216));
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 

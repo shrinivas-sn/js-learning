@@ -1,0 +1,28 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.main-div{
+    background: linear-gradient(to right, rgb(173, 32, 173), rgb(75, 75, 222));
+    height: 150px;
+    width: 30%;
+    /* margin: 10px; */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#input{
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 20px;
+    width: 120px;
+}
+
+#submit{
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 20px;
+    width: 50px;
+}

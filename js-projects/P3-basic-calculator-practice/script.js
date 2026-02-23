@@ -1,5 +1,6 @@
 const button = document.querySelectorAll('.btn')
 const display = document.getElementById('display')
+const clear = document.getElementById('clear')
 console.log(button)
 
 let output = ""
