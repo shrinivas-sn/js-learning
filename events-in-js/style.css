@@ -1,0 +1,14 @@
+body{
+    background: linear-gradient(to right, rgb(209, 60, 209), rgb(81, 81, 213));
+}
+li{
+    list-style: none;
+}
+img{
+    height: 200px;
+    width: 200px;
+}
+
+a{
+    color: aliceblue;
+}
