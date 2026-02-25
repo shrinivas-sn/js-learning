@@ -19,6 +19,12 @@
     height: 20px;
     width: 120px;
 }
+#input2{
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 20px;
+    width: 120px;
+}
 
 #submit{
     border: 2px solid black;
