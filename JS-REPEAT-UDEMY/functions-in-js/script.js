@@ -34,10 +34,37 @@
 
 //Arrow funciton in JS => It is a special form of function which is a shortcut of function
 
-const calcAge1 = function(birthYear){
+// const calcAge1 = function(birthYear){
+//     return 2037 - birthYear;
+// }
+
+// const calcAge2 = birthYear => 2037 - birthYear;
+// const age2 = calcAge2(2001);
+// console.log(age2);
+
+
+//function in a function
+
+// function cutFruitPieces(fruit){
+//     return fruit*4;
+// }
+// function fruitProcessor(apples, oranges){
+//     const applePieces = cutFruitPieces(apples);
+//     const orangePieces = cutFruitPieces(oranges);
+//     console.log(apples, oranges);
+//     const juice = `Juice with ${applePieces} apples and ${orangePieces} oranges.`
+//     return juice;
+// }
+// console.log(fruitProcessor(2,3));
+
+const calcAge = function(birthYear){
     return 2037 - birthYear;
 }
 
-const calcAge2 = birthYear => 2037 - birthYear;
-const age2 = calcAge2(2001);
-console.log(age2);
+const yearsUntilRetirement = function (birthYear, firstName){
+    const  age = calcAge(birthYear);
+    const retirement = 65 - age;
+    return `${firstName} retires in ${retirement} years`;
+}
+console.log(yearsUntilRetirement(1991, 'Rahul'));
+console.log(yearsUntilRetirement(2027, 'Rahul'));
