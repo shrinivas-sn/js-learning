@@ -10,6 +10,7 @@ let secretNumber = parseInt(Math.random()*20 + 1);
 console.log(secretNumber);
 let score = 20;
 const bodyStyle = document.querySelector('body');
+let highScore = 0;
 document.querySelector('.check').addEventListener('click', function(){
     const guess = Number(document.querySelector('.guess').value);
     console.log(guess, typeof guess)
@@ -19,9 +20,15 @@ document.querySelector('.check').addEventListener('click', function(){
         document.querySelector('.message').textContent = 'Correct Number';
         bodyStyle.style.backgroundColor = "green";
         document.querySelector('.number').textContent = secretNumber;
-    }else if(guess > secretNumber){
+        if (score > highScore){
+            highScore = score;
+            document.querySelector('.highscore').textContent = highScore;
+        }
+
+        
+    }else if(guess !== secretNumber){
         if(score>1){
-            document.querySelector('.message').textContent = 'Too high Number';
+            document.querySelector('.message').textContent = guess > secretNumber ? ' Number is too high' : 'Number is too low';
             score--;
             document.querySelector('.score').textContent = score;
             bodyStyle.style.backgroundColor = "red";
@@ -29,16 +36,30 @@ document.querySelector('.check').addEventListener('click', function(){
             document.querySelector('.message').textContent = 'You lost the game'
             score = 0;
         }   
-    }else if(guess < secretNumber){
-        if(score>1){
-            document.querySelector('.message').textContent = 'Too low Number';
-            score--;
-            document.querySelector('.score').textContent = score;
-            bodyStyle.style.backgroundColor = "orange";
-        }else{
-            document.querySelector('.message').textContent = 'You lost the game'
-        }  
     }
+    //If score goes higer than guess
+    // else if(guess > secretNumber){
+    //     if(score>1){
+    //         document.querySelector('.message').textContent = 'Too high Number';
+    //         score--;
+    //         document.querySelector('.score').textContent = score;
+    //         bodyStyle.style.backgroundColor = "red";
+    //     }else{
+    //         document.querySelector('.message').textContent = 'You lost the game'
+    //         score = 0;
+    //     }   
+
+    //     //If score goes lower than guess score
+    // }else if(guess < secretNumber){
+    //     if(score>1){
+    //         document.querySelector('.message').textContent = 'Too low Number';
+    //         score--;
+    //         document.querySelector('.score').textContent = score;
+    //         bodyStyle.style.backgroundColor = "orange";
+    //     }else{
+    //         document.querySelector('.message').textContent = 'You lost the game'
+    //     }  
+    // }
 });
 
 const again = document.querySelector('.again');
