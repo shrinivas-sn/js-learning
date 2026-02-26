@@ -1,4 +1,9 @@
-const mainBox = document.querySelector('.main-div')
+const mainBox = document.querySelector('.main-div');
+const formDiv = document.querySelector('.form-div');
+const inputDetails = document.querySelector('.form-input');
+const inputForm = document.querySelector('.input-form');
+const formBtn = document.querySelector('.form-btn');
+const names = document.querySelector('.names');
 
 mainBox.addEventListener('click', function(e){
     const height = parseInt(document.querySelector('#height').value)
@@ -24,4 +29,19 @@ mainBox.addEventListener('click', function(e){
     else {
         evaluation.innerHTML = `The person is Unhealthy`
     }
+});
+
+
+names.addEventListener('input', function(e) {
+    let namesValue = names.value;
+    if(namesValue > 0){
+        alert('enter valid name');
+    }else{
+        console.log('No interruption')
+    }
+})
+
+
+formBtn.addEventListener('click', function(e) {
+    alert('The details have been submitted');
 })
