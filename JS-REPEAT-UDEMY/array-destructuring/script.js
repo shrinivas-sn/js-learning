@@ -1,30 +1,27 @@
-const resturant = {
-    name: 'Classico Italiano',
-    location: 'Via Angelo Tavanti 23, Firenze, Italy',
-    categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic,'],
-    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic', 'Bread', 'Caprese Salad'],
-    mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-    order: function(starterIndex, mainIndex){
-        return [this.starterMenu [starterIndex], this.mainMenu[mainIndex]]
-    },
-    openingHours: {
-        thu:{
-            open: 12,
-            close: 22,
-        },
-        fri:{
-            open: 12,
-            close: 22,
-        },
-        sat:{
-            open: 12,
-            close: 22,
-        }
-        
-      
-    }
-
-};
+// const resturant = {
+//     name: 'Classico Italiano',
+//     location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//     categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic,'],
+//     starterMenu: ['Focaccia', 'Bruschetta', 'Garlic', 'Bread', 'Caprese Salad'],
+//     mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+//     order: function(starterIndex, mainIndex){
+//         return [this.starterMenu [starterIndex], this.mainMenu[mainIndex]]
+//     },
+//     openingHours: {
+//         thu:{
+//             open: 12,
+//             close: 22,
+//         },
+//         fri:{
+//             open: 12,
+//             close: 22,
+//         },
+//         sat:{
+//             open: 12,
+//             close: 22,
+//         } 
+//     }
+// };
 // let [main, secondary] = resturant.categories;
 // [main, secondary] = [secondary, main];
 // console.log(main, secondary);
@@ -141,12 +138,68 @@ const resturant = {
 // console.log('hello' && 23 && null && 'jonas');
 
 
-//nullish and undefined values
-resturant.numGuests = 0;
-const guests1 = resturant.numGuests ? resturant.numGuests:10;
-console.log(guests1)
+// nullish and undefined values
+// resturant.numGuests = 0;
+// const guests1 = resturant.numGuests ? resturant.numGuests:10;
+// console.log(guests1)
 
-const guestCorrect = resturant.numGuests ?? 10;
-console.log(guestCorrect);
+// const guestCorrect = resturant.numGuests ?? 10;
+// console.log(guestCorrect);
+
+// const arr = [1, 2, 3, [4, 5]];
+// const [a, b, c, d] = arr
+// console.log(a, b, ...d);
+
+// const profile = {
+//     names:{
+//         name1: 'Shrinu',
+//         name2: 'Rahul',
+//         name3: 'Vinod',
+//         name4: 'Kiran',
+//     },
+//     ages:[21, 22, 20, 24],
+//     city:['Hubballi', 'Banglore', 'Kolar', 'Belagavi'],
+//     occupation: ['Intern', 'Student', 'Teacher', 'Employee'],
+// }
+
+// const profileCopy = profile;
+// console.log(profileCopy.names.name1);
+// console.log(profileCopy.names.name2);
+// console.log(profileCopy.names.name3);
+// console.log(profileCopy.names.name4);
+
+// const profileChanges = profile;
+// profileChanges.names.name1 = 'Shrinu(name changed)';
+// console.log(profileChanges.names.name1);
+
+// const profileNames = profile.names;
+// console.log(profileNames);
+
+// const cityNames = [profile.city, 'bangalore'];
+// console.log(cityNames);
+
+// const newOccupation = [profile.occupation, 'worker']
+// console.log(newOccupation);
+
+
+const rest1 = {
+    name: 'Cari',
+    numGuests: 20,
+};
+
+const rest2 ={
+    name: 'La Piazza',
+    owner: 'Giovanni Rossi',
+}
+
+rest1.numGuests ||= 10;
+rest2.numGuests ||= 10;
+
+//Or assignment operator
+rest1.numGuests = rest2.numGuests || 10;
+rest2.numGuests = rest1.numGuests || 10;
+console.log(rest1);
+console.log(rest2);
+
 
 
