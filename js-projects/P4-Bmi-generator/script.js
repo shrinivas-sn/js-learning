@@ -26,6 +26,7 @@ formBtn.addEventListener('click', function(e){
         userSleep: sleepHours,
     };
     console.log(userDetails);
+    alert('The Persnol details have been submitted')
 
     //Calculating the BMI, BMR AND SQC result using user details
     const bmrBtn = document.querySelector('#bmr-btn');
@@ -45,10 +46,10 @@ formBtn.addEventListener('click', function(e){
          const bmrSpan = document.querySelector('#bmr-span');
         if(userDetails.userGender === 'male'){
             const bmrResult = 10*userDetails.userWeight + 6.25*userDetails.userHeight - 5*userDetails.userAge +5
-            bmrSpan.textContent = `The BMR value of the user is : ${bmrResult}`;
+            bmrSpan.textContent = `For male the BMR value of the user is : ${bmrResult}`;
         }else if(userDetails.userGender === 'female'){
             const bmrResult = 10*userDetails.userWeight + 6.25*userDetails.userHeight - 5*userDetails.userAge -161;
-            bmrSpan.textContent = `The BMR value of the user is : ${bmrResult}`;
+            bmrSpan.textContent = `For female the BMR value of the user is : ${bmrResult}`;
         };
     });
 
@@ -56,15 +57,15 @@ formBtn.addEventListener('click', function(e){
     sqcBtn.addEventListener('click', function(e){
         const sqcSpan = document.querySelector('#sqc-span')
         if(userDetails.userAge>=3 && userDetails.userAge<=5){
-            sqcSpan.textContent = 'The use has to sleep alteast 10 to 13 hours'
+            sqcSpan.textContent = 'The user has to sleep alteast 10 to 13 hours'
         }else if(userDetails.userAge>5 && userDetails.userAge<=12){
-            sqcSpan.textContent = 'The use has to sleep alteast 9 to 12 hours'
+            sqcSpan.textContent = 'The user has to sleep alteast 9 to 12 hours'
         }else if(userDetails.userAge>12 && userDetails.userAge<=18){
-            sqcSpan.textContent = 'The use has to sleep alteast 8 to 10 hours'
+            sqcSpan.textContent = 'The user has to sleep alteast 8 to 10 hours'
         }else if(userDetails.userAge>18 && userDetails.userAge<=64){
-            sqcSpan.textContent = 'The use has to sleep alteast 7 hours'
+            sqcSpan.textContent = 'The user has to sleep alteast 7 hours'
         }else if(userDetails.userAge>64 && userDetails.userAge<=100){
-            sqcSpan.textContent = 'The use has to sleep alteast 7 to 8 hours'
+            sqcSpan.textContent = 'The user has to sleep alteast 7 to 8 hours'
         }        
     });
 

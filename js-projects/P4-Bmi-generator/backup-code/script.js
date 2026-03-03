@@ -26,6 +26,7 @@ formBtn.addEventListener('click', function(e){
         userSleep: sleepHours,
     };
     console.log(userDetails);
+    alert('The Persnol details have been submitted')
 
     //Calculating the BMI, BMR AND SQC result using user details
     const bmrBtn = document.querySelector('#bmr-btn');
@@ -45,10 +46,10 @@ formBtn.addEventListener('click', function(e){
          const bmrSpan = document.querySelector('#bmr-span');
         if(userDetails.userGender === 'male'){
             const bmrResult = 10*userDetails.userWeight + 6.25*userDetails.userHeight - 5*userDetails.userAge +5
-            bmrSpan.textContent = `The BMR value of the user is : ${bmrResult}`;
+            bmrSpan.textContent = `For male the BMR value of the user is : ${bmrResult}`;
         }else if(userDetails.userGender === 'female'){
             const bmrResult = 10*userDetails.userWeight + 6.25*userDetails.userHeight - 5*userDetails.userAge -161;
-            bmrSpan.textContent = `The BMR value of the user is : ${bmrResult}`;
+            bmrSpan.textContent = `For female the BMR value of the user is : ${bmrResult}`;
         };
     });
 

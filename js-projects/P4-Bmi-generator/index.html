@@ -14,6 +14,8 @@
                 A Interactve Health Metrics Calculator page using DOM manipulation, Event Listeners, Modern ES6 topics
             </div>
         </header>
+    <div class = "container">
+        <!-- Form container for the user details as input-->
         <div class = "form-div">
             <div class = "form-title">Persnol Detials</div>
             <form>
@@ -47,35 +49,41 @@
                 </div><br>               
                 <button class="button form-btn">Submit details</button>
             </form>
+        </div><br><br>
+
+        <!-- BMI calculator container -->
+        This below calculator is for Illustration Purpose only<br>Describing how the calculator works using DOM manipulation
+        <div class="main-div">
+            <pre class = "div-title"> BMI Calculator</pre><br>
+            <div class = "input-box">Height in CM
+                <div class="calc-input">
+                    <input type = "text" id = "height" placeholder="Height">
+                </div>
+            </div><br>
+            <div class = "input-box">Weight in KG
+                <div class="calc-input">
+                    <input type="text" id = "weight" placeholder="Weight">
+                </div>
+            </div><br>
+            <button class="calc-btn button">Calculate</button><br>
+            <div id="results"></div><br>
+            <div id = "evaluation"></div>
         </div>
-    <div class="main-div">
-        <pre class = "div-title"> BMI Calculator</pre><br>
-        <div class = "input-box">Height in CM
-            <div class="calc-input">
-                <input type = "text" id = "height" placeholder="Height">
+
+        <!--Result container which displays all 3 types of results-->
+        <div class="results-div">
+            <div id = "bmi-result">
+                <button class = "result-btn" id = "bmi-btn">Click here for BMI value</button><br>
+                <span id = "bmi-span"></span>
             </div>
-        </div><br>
-        <div class = "input-box">Weight in KG
-            <div class="calc-input">
-                <input type="text" id = "weight" placeholder="Weight">
+            <div id = "bmr-result">
+                <button class = "result-btn" id = "bmr-btn">Click here for BMR value</button><br>
+                <span id = "bmr-span"></span>
             </div>
-        </div><br>
-        <button class="calc-btn button">Calculate</button><br>
-        <div id="results"></div><br>
-        <div id = "evaluation"></div>
-    </div>
-    <div class="results-div">
-        <div id = "bmi-result">
-            <button class = "result-btn" id = "bmi-btn">Click here for BMI value</button><br>
-            <span id = "bmi-span"></span>
-        </div>
-        <div id = "bmr-result">
-            <button class = "result-btn" id = "bmr-btn">Click here for BMR value</button><br>
-            <span id = "bmr-span"></span>
-        </div>
-        <div id = "sqc-result">
-            <button class = "result-btn" id = "sqc-btn">Click here for SQC value</button><br>
+            <div id = "sqc-result">
+                <button class = "result-btn" id = "sqc-btn">Click here for SQC value</button><br>
                 <span id = "sqc-span"></span>
+            </div>
         </div>
     </div>
     <script src = "script.js"></script>
