@@ -156,8 +156,8 @@ function fetchHealthTip() {
                 resolve("For Females Drink at least 7 glasses of water daily!");
             }else{
                 resolve("In general every person has to drink at least 7 glasses of water daily!");
-            }
-        }, 1000); // 1000 milliseconds = 1 second delay
+            };
+        }, 1000);
     });
 };
 // 1. Grab the HTML elements
