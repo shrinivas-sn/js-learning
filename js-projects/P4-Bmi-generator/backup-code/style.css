@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/*Body of web page styling*/
 body{
     display: flex;
     flex-direction: column;
@@ -14,12 +15,20 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .container{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.div-box{
+    height: 600px;
+    width: 400px;
+    background: linear-gradient(to bottom, rgb(216, 12, 216), rgb(67, 67, 204));
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(41, 50, 110);
+    margin: 10px;
 }
 
 .nav-bar{
@@ -42,49 +51,35 @@ body{
     height: 100px;
     width: 100%;
     background: rgb(215, 180, 180);
-    /* border: 2px solid black; */
     border-radius: 10px;
     background: transparent;
     font-size: 1.2rem;
     text-align: center;
 }
 
+/*form div styling*/
 .form-div{
-    height: 600px;
-    width: 400px;
-    background: linear-gradient(to bottom, rgb(216, 12, 216), rgb(67, 67, 204));
-    color: rgb(3, 2, 2);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* border: 2px solid rgb(20, 18, 18); */
-    border-radius: 10px;
     font-size: 1.1rem;
-    margin: 10px;
     padding: 0px;
     font-weight: 700;
     font-family: sans-serif; 
     position: relative;
-    box-shadow: 5px 5px 5px rgb(41, 50, 110);
 }
-
 .form-title{
     height: 30px;
     width: 100%;
-    /* background-color: rgb(198, 150, 212); */
     position: absolute;
     top: 0px;
-    /* border: 2px solid black; */
-    /* border-top-left-radius: 8.5px;
-    border-top-right-radius: 8.5px; */
     padding: 5px;
     text-align: center;
     font-family: sans-serif;
     font-size: 1.4rem;
     font-weight: 500;
 }
-
 .input-box{
     height: 60px;
     width: 270px;
@@ -95,6 +90,10 @@ body{
     font-size: 1rem;
     font-weight: 400;
 }
+.form-btn{
+    position:relative;
+    left: 60px;
+}
 
 input{
     height:30px;
@@ -104,21 +103,8 @@ input{
     font-size: 1.1rem;
 }
 
-.form-input{
-    height:30px;
-    width: 250px;
-    border: 1px solid black;
-    border-radius: 5px;
-    font-size: 1.1rem;
-}
-
-.form-btn{
-    position:relative;
-    left: 60px;
-}
-
+/*bmi calculator div*/
 .div-title{
-    /* background-color: rgb(198, 150, 212); */
     height: 30px;
     width: 100%;
     margin: 0px;
@@ -126,43 +112,32 @@ input{
     position: absolute;
     top: 0px;
     text-align: center;
-    /* border-top-left-radius: 8.5px; */
-    /* border-top-right-radius: 8.5px; */
     font-family: sans-serif;
     font-size: 1.4rem;
     font-weight: 500;
 }
-
 .main-div{
-    height: 600px;
-    width: 400px;
-    background: linear-gradient(to bottom, rgb(216, 12, 216), rgb(67, 67, 204));
-    margin: 10px;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
-    border-radius: 10px;
-    /* border: 2px solid black; */
     position: relative;
     font-size: 1.2rem;
     font-size: 20px;
     font-family: sans-serif;
-    box-shadow: 5px 5px 5px rgb(41, 50, 110);
 }
-
+/* Button styling for all buttons*/
 button{
     height: 30px;
     width: 150px;
-    background: linear-gradient(to right, rgb(187, 155, 28), rgb(195, 122, 122));
+    background: linear-gradient(to right, rgb(77, 178, 113), rgba(120, 239, 56, 0.775));
     border: 2px solid black;
     box-shadow: 2px 2px 2px;
     border-radius: 5px;
     transition: transform 0.10s ease-in-out;
     font-size: 1.2rem;
+    padding: 0px;
 }
-
 .button:hover{
     transform: scale(0.95);
     cursor:pointer;
@@ -171,36 +146,45 @@ button{
     transform: scale(0.90)
 }
 
-#results{
-    text-align: center;
-}
-#evaluation{
-    text-align: center;
-}
-
+/*result div styling with all 3 result display*/
 .results-div{
-    height: 600px;
-    width: 400px;
-    background: linear-gradient(to bottom, rgb(216, 12, 216), rgb(67, 67, 204));
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgb(41, 50, 110);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    margin: 10px;
+}
+.result-box{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 0px;
 }
 
+/* result button styling*/
 .result-btn{
     height: 30px;
     width: 240px;
-    background: linear-gradient(to right, rgb(187, 155, 28), rgb(195, 122, 122));
+    background: linear-gradient(to right, rgb(77, 178, 113), rgba(120, 239, 56, 0.775));
     border: 2px solid black;
     box-shadow: 2px 2px 2px;
     border-radius: 5px;
     transition: transform 0.10s ease-in-out;
     font-size: 1.2rem;
-    margin: 30px;
+    margin: 10px;
+}
+.result-display{
+    height: 25px;
+    width: 100%;
+    background: linear-gradient(to right, rgb(110, 134, 208), rgb(102, 150, 192));
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px rgb(21, 23, 19);
+    padding: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .result-btn:hover{
     transform: scale(0.95);
@@ -210,34 +194,16 @@ button{
     transform: scale(0.90)
 }
 
-.result-display{
-    height: 25px;
-    width: 100%;
-    background: linear-gradient(to right, rgb(181, 181, 124), rgb(165, 221, 123));
-    border-radius: 5px;
-    box-shadow: 3px 3px 3px rgb(21, 23, 19);
-    padding: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/*saved user styling to display saved user details*/
 .saved-user{
-    height: 600px;
-    width: 400px;
-    background: linear-gradient(to bottom, rgb(216, 12, 216), rgb(67, 67, 204));
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgb(41, 50, 110);
     text-align: center;
-    font-size: large;
-    margin: 10px;
+    font-size: larger;
     padding: 10px;
     display:flex;
     flex-direction: column;
     justify-content: top;
     align-items: center;
 }
-
 .saved-user-details{
     height: 200px;
     width: 90%;

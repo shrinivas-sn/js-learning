@@ -8,15 +8,15 @@
     <link rel = "stylesheet" href = "style.css">
 </head>
 <body>
-        <h1 class = "nav-bar">BMI Calculator using DOM Manipulation</h1>
+        <h1 class = "nav-bar">Interactive Health Metrics Calculator</h1>
         <header class="header">
             <div class = "header-div">
-                A Interactve Health Metrics Calculator page using DOM manipulation, Event Listeners, Modern ES6 topics
+                A Interactve Calculator page using DOM manipulation, Event Listeners, Modern ES6 topics
             </div>
         </header>
     <div class = "container">
         <!-- Form container for the user details as input-->
-        <div class = "form-div">
+        <div class = "form-div div-box">
             <div class = "form-title">Persnol Detials</div>
             <form>
                 <div class="input-box">
@@ -53,7 +53,7 @@
 
         <!-- BMI calculator container -->
         This below calculator is for Illustration Purpose only<br>Describing how the calculator works using DOM manipulation
-        <div class="main-div">
+        <div class="main-div div-box">
             <pre class = "div-title"> BMI Calculator</pre><br>
             <div class = "input-box">Height in CM
                 <div class="calc-input">
@@ -71,29 +71,28 @@
         </div>
 
         <!--Result container which displays all 3 types of results-->
-        <div class="results-div">
-            <div id = "bmi-result">
-                <button class = "result-btn" id = "bmi-btn">Click here for BMI value</button><br>
+        <div class="results-div div-box">
+            <div class = "result-box">
+                <button class = "result-btn" id = "bmi-btn">Click here for BMI value</button>
                 <span id = "bmi-span" class = "result-display"></span>
             </div>
-            <div id = "bmr-result">
-                <button class = "result-btn" id = "bmr-btn">Click here for BMR value</button><br>
+            <div class = "result-box">
+                <button class = "result-btn" id = "bmr-btn">Click here for BMR value</button>
                 <span id = "bmr-span" class = "result-display"></span>
             </div>
-            <div id = "sqc-result">
-                <button class = "result-btn" id = "sqc-btn">Click here for SQC value</button><br>
+            <div class = "result-box">
+                <button class = "result-btn" id = "sqc-btn">Click here for SQC value</button>
                 <div id = "sqc-span" class = "result-display"></div>
             </div>
-            <div>
+            <div class = "result-box">
                 <button class = "result-btn" id="tip-btn">Get a Health Tip</button>
-                <div class = "result-display" id = "tip-display"></div>
+                <span id = "tip-display" class = "result-display"></span>
             </div>
-            
         </div>
 
         <!--Displaying the saved userDetails-->
-        <div class = saved-user>
-            The saved user details are shown below<br><br>
+        <div class = "saved-user div-box">
+            The last saved user details are shown below<br><br>
             <!-- <pre id = "display-user"></pre><br> -->
             <div class = "saved-user-details">
                 <div>User Name: <span id = "name-span"></span></div>
@@ -104,6 +103,9 @@
                 <div>User Step count: <span id = "step-span"></span></div>
                 <div>User Sleep hours: <span id = "sleep-span"></span></div>
             </div><br>
+        </div>
+        <div class = "div-box">
+
         </div>
     </div>
     <script src = "script.js"></script>
