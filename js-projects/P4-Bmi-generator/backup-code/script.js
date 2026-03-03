@@ -5,7 +5,13 @@ const formInput = document.querySelector('.form-input');
 const mainBox = document.querySelector('.main-div');
 const calcBtn = document.querySelector('.calc-btn');
 
-formBtn.addEventListener('click', function(e){
+// Get the userDetails from saved local storage
+const savedUserDetails = localStorage.getItem('userDetails');
+console.log(savedUserDetails);
+let userDetails = JSON.parse(savedUserDetails) || {};
+console.log(userDetails);
+
+formBtn.addEventListener('click', function (e){
     e.preventDefault();
     const name = document.querySelector('#name').value;
     const gender = document.querySelector('#gender').value;
@@ -14,9 +20,8 @@ formBtn.addEventListener('click', function(e){
     const height = Number(document.querySelector('#form-height').value);
     const stepCount = Number(document.querySelector('#step-count').value);
     const sleepHours = Number(document.querySelector('#sleep-hours').value);
-    const allResults = document.querySelector('.results-div')
-    console.log(weight);
-    const userDetails = {
+    const allResults = document.querySelector('.results-div');
+    userDetails = {
         userName: name,
         userGender: gender,
         userAge: age,
@@ -25,10 +30,55 @@ formBtn.addEventListener('click', function(e){
         userSteps: stepCount,
         userSleep: sleepHours,
     };
-    console.log(userDetails);
-    alert('The Persnol details have been submitted')
+    // console.log(userDetails);
+    alert('The Persnol details have been submitted');
+    const userDetailsStorage = JSON.stringify(userDetails);
+    localStorage.setItem('userDetails', userDetailsStorage);
 
-    //Calculating the BMI, BMR AND SQC result using user details
+    // //Calculating the BMI, BMR AND SQC result using user details
+    // const bmrBtn = document.querySelector('#bmr-btn');
+    // const bmiBtn = document.querySelector('#bmi-btn');
+    // const sqcBtn = document.querySelector('#sqc-btn');
+
+    // //BMI calculation using userDetails
+    // bmiBtn.addEventListener('click', function(e){
+    //     const bmiSpan = document.querySelector('#bmi-span')
+    //     const bmiResult = ((userDetails.userWeight)/((userDetails.userHeight*userDetails.userHeight)/10000)).toFixed(2);
+    //     // ((weight)/((height*height)/10000)).toFixed(2)
+    //     bmiSpan.textContent = `The BMI value of the user is: ${bmiResult}`;
+    // });
+
+    // //BMR calculation using userDetails
+    // bmrBtn.addEventListener('click', function(e){
+    //      const bmrSpan = document.querySelector('#bmr-span');
+    //     if(userDetails.userGender === 'male'){
+    //         const bmrResult = 10*userDetails.userWeight + 6.25*userDetails.userHeight - 5*userDetails.userAge +5
+    //         bmrSpan.textContent = `For male the BMR value of the user is : ${bmrResult}`;
+    //     }else if(userDetails.userGender === 'female'){
+    //         const bmrResult = 10*userDetails.userWeight + 6.25*userDetails.userHeight - 5*userDetails.userAge -161;
+    //         bmrSpan.textContent = `For female the BMR value of the user is : ${bmrResult}`;
+    //     };
+    // });
+
+    // //SQC calculation using userDetails
+    // sqcBtn.addEventListener('click', function(e){
+    //     const sqcSpan = document.querySelector('#sqc-span')
+    //     if(userDetails.userAge>=3 && userDetails.userAge<=5){
+    //         sqcSpan.textContent = 'The user has to sleep alteast 10 to 13 hours'
+    //     }else if(userDetails.userAge>5 && userDetails.userAge<=12){
+    //         sqcSpan.textContent = 'The user has to sleep alteast 9 to 12 hours'
+    //     }else if(userDetails.userAge>12 && userDetails.userAge<=18){
+    //         sqcSpan.textContent = 'The user has to sleep alteast 8 to 10 hours'
+    //     }else if(userDetails.userAge>18 && userDetails.userAge<=64){
+    //         sqcSpan.textContent = 'The user has to sleep alteast 7 hours'
+    //     }else if(userDetails.userAge>64 && userDetails.userAge<=100){
+    //         sqcSpan.textContent = 'The user has to sleep alteast 7 to 8 hours'
+    //     }        
+    // });
+
+});
+
+//Calculating the BMI, BMR AND SQC result using user details
     const bmrBtn = document.querySelector('#bmr-btn');
     const bmiBtn = document.querySelector('#bmi-btn');
     const sqcBtn = document.querySelector('#sqc-btn');
@@ -57,20 +107,20 @@ formBtn.addEventListener('click', function(e){
     sqcBtn.addEventListener('click', function(e){
         const sqcSpan = document.querySelector('#sqc-span')
         if(userDetails.userAge>=3 && userDetails.userAge<=5){
-            sqcSpan.textContent = 'The use has to sleep alteast 10 to 13 hours'
+            sqcSpan.textContent = 'The user has to sleep alteast 10 to 13 hours'
         }else if(userDetails.userAge>5 && userDetails.userAge<=12){
-            sqcSpan.textContent = 'The use has to sleep alteast 9 to 12 hours'
+            sqcSpan.textContent = 'The user has to sleep alteast 9 to 12 hours'
         }else if(userDetails.userAge>12 && userDetails.userAge<=18){
-            sqcSpan.textContent = 'The use has to sleep alteast 8 to 10 hours'
+            sqcSpan.textContent = 'The user has to sleep alteast 8 to 10 hours'
         }else if(userDetails.userAge>18 && userDetails.userAge<=64){
-            sqcSpan.textContent = 'The use has to sleep alteast 7 hours'
+            sqcSpan.textContent = 'The user has to sleep alteast 7 hours'
         }else if(userDetails.userAge>64 && userDetails.userAge<=100){
-            sqcSpan.textContent = 'The use has to sleep alteast 7 to 8 hours'
+            sqcSpan.textContent = 'The user has to sleep alteast 7 to 8 hours'
         }        
     });
 
-});
 
+//Calculator container with a logic to test dom manipulation, this is for illustration purpose only
 calcBtn.addEventListener('click', function(e){
     const height = parseInt(document.querySelector('#height').value);
     const weight = parseInt(document.querySelector('#weight').value);
@@ -86,7 +136,7 @@ calcBtn.addEventListener('click', function(e){
     const bmi = ((weight)/((height*height)/10000)).toFixed(2);
     results.textContent = `The BMI value is: ${bmi}`
     if(bmi< 18.5){
-        evaluation.innerHTML= `${bmi} The person is Underweight`
+        evaluation.innerHTML= `${bmi} The person is Underweight`// using template literals to display the results
     }else if(bmi>=18.5 && bmi<=24.99){
         evaluation.innerHTML = `${bmi} The person is Healthy`;
     }else if(bmi>24.99 && bmi<=29.99){
@@ -96,4 +146,43 @@ calcBtn.addEventListener('click', function(e){
     }
 });
 
+// 1. Grab the HTML elements
+const tipBtn = document.querySelector('#tip-btn');
+const tipDisplay = document.querySelector('#tip-display');
 
+// 2. Hire the Waiter! Notice the word "async" right before "function"
+tipBtn.addEventListener('click', async function() {
+    tipDisplay.textContent = "Loading your health tip..."
+    const theTip = await fetchHealthTip();
+    tipDisplay.textContent = theTip;
+});
+
+//displaying a health tip on web page using Mock API 
+function fetchHealthTip() {
+    return new Promise(function(resolve) {
+        setTimeout(function() {
+            resolve("Drink at least 8 glasses of water today to stay hydrated!");
+        }, 1000); // 1000 milliseconds = 1 second delay
+    });
+};
+
+
+//Displaying the saved user details on the web page 
+// const displayUsers = document.querySelector('#display-user');
+// displayUsers.textContent = JSON.stringify(userDetails, null, 2);
+
+const nameSpan = document.querySelector('#name-span');
+const genderSpan = document.querySelector('#gender-span');
+const ageSpan = document.querySelector('#age-span');
+const weightSpan = document.querySelector('#weight-span');
+const heightSpan = document.querySelector('#height-span');
+const stepSpan = document.querySelector('#step-span');
+const sleepSpan = document.querySelector('#sleep-span');
+
+nameSpan.textContent = JSON.stringify(userDetails.userName);
+genderSpan.textContent = JSON.stringify(userDetails.userGender);
+ageSpan.textContent = JSON.stringify(userDetails.userAge);
+weightSpan.textContent = JSON.stringify(userDetails.userWeight);
+heightSpan.textContent = JSON.stringify(userDetails.userHeight);
+stepSpan.textContent = JSON.stringify(userDetails.userSteps);
+sleepSpan.textContent = JSON.stringify(userDetails.userSleep);

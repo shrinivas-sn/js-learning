@@ -222,6 +222,13 @@ button{
     align-items: center;
 }
 
+.result-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .saved-user{
     height: 600px;
     width: 400px;

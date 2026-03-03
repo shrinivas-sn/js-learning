@@ -146,6 +146,20 @@ calcBtn.addEventListener('click', function(e){
     }
 });
 
+//Displaying a health tip using Mock API
+function fetchHealthTip() {
+    return new Promise(function(resolve) {
+        setTimeout(function() {
+            if(userDetails.userGender === 'male'){
+                resolve("For males drink at least 8 glasses of water daily!");
+            }else if(userDetails.userGender === 'female'){
+                resolve("For Females Drink at least 7 glasses of water daily!");
+            }else{
+                resolve("In general every person has to drink at least 7 glasses of water daily!");
+            }
+        }, 1000); // 1000 milliseconds = 1 second delay
+    });
+};
 // 1. Grab the HTML elements
 const tipBtn = document.querySelector('#tip-btn');
 const tipDisplay = document.querySelector('#tip-display');
@@ -156,15 +170,6 @@ tipBtn.addEventListener('click', async function() {
     const theTip = await fetchHealthTip();
     tipDisplay.textContent = theTip;
 });
-
-//displaying a health tip on web page using Mock API 
-function fetchHealthTip() {
-    return new Promise(function(resolve) {
-        setTimeout(function() {
-            resolve("Drink at least 8 glasses of water today to stay hydrated!");
-        }, 1000); // 1000 milliseconds = 1 second delay
-    });
-};
 
 
 //Displaying the saved user details on the web page 
@@ -179,10 +184,13 @@ const heightSpan = document.querySelector('#height-span');
 const stepSpan = document.querySelector('#step-span');
 const sleepSpan = document.querySelector('#sleep-span');
 
-nameSpan.textContent = JSON.stringify(userDetails.userName);
-genderSpan.textContent = JSON.stringify(userDetails.userGender);
-ageSpan.textContent = JSON.stringify(userDetails.userAge);
-weightSpan.textContent = JSON.stringify(userDetails.userWeight);
-heightSpan.textContent = JSON.stringify(userDetails.userHeight);
-stepSpan.textContent = JSON.stringify(userDetails.userSteps);
-sleepSpan.textContent = JSON.stringify(userDetails.userSleep);
+nameSpan.textContent = userDetails.userName;
+genderSpan.textContent = userDetails.userGender;
+ageSpan.textContent = userDetails.userAge;
+weightSpan.textContent = userDetails.userWeight;
+heightSpan.textContent = userDetails.userHeight;
+stepSpan.textContent = userDetails.userSteps;
+sleepSpan.textContent = userDetails.userSleep;
+
+const healthTip = fetch('https://github-api.mock.beeceptor.com/app/hook/deliveries');
+console.log(healthTip);

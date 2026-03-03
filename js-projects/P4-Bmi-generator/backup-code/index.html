@@ -66,24 +66,44 @@
                 </div>
             </div><br>
             <button class="calc-btn button">Calculate</button><br>
-            <div id="results"></div><br>
-            <div id = "evaluation"></div>
+            <div id="results" class = "result-display"></div><br>
+            <div id = "evaluation" class = "result-display"></div>
         </div>
 
         <!--Result container which displays all 3 types of results-->
         <div class="results-div">
             <div id = "bmi-result">
                 <button class = "result-btn" id = "bmi-btn">Click here for BMI value</button><br>
-                <span id = "bmi-span"></span>
+                <span id = "bmi-span" class = "result-display"></span>
             </div>
             <div id = "bmr-result">
                 <button class = "result-btn" id = "bmr-btn">Click here for BMR value</button><br>
-                <span id = "bmr-span"></span>
+                <span id = "bmr-span" class = "result-display"></span>
             </div>
             <div id = "sqc-result">
                 <button class = "result-btn" id = "sqc-btn">Click here for SQC value</button><br>
-                <span id = "sqc-span"></span>
+                <div id = "sqc-span" class = "result-display"></div>
             </div>
+            <div>
+                <button class = "result-btn" id="tip-btn">Get a Health Tip</button>
+                <div class = "result-display" id = "tip-display"></div>
+            </div>
+            
+        </div>
+
+        <!--Displaying the saved userDetails-->
+        <div class = saved-user>
+            The saved user details are shown below<br><br>
+            <!-- <pre id = "display-user"></pre><br> -->
+            <div class = "saved-user-details">
+                <div>User Name: <span id = "name-span"></span></div>
+                <div>User Gender: <span id = "gender-span"></span></div>
+                <div>User Age: <span id = "age-span"></span></div>
+                <div>User Weight: <span id = "weight-span"></span></div>
+                <div>User Height: <span id = "height-span"></span></div>
+                <div>User Step count: <span id = "step-span"></span></div>
+                <div>User Sleep hours: <span id = "sleep-span"></span></div>
+            </div><br>
         </div>
     </div>
     <script src = "script.js"></script>
