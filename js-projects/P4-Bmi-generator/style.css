@@ -216,4 +216,23 @@ span{
     background-color: white;
 }
 
+.saved-user{
+    height: 600px;
+    width: 400px;
+    background: linear-gradient(to bottom, rgb(216, 12, 216), rgb(67, 67, 204));
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(41, 50, 110);
+    text-align: center;
+    font-size: large;
+    margin: 10px;
+    padding: 10px;
+}
+
+.result-display{
+    height: 25px;
+    width: 100%;
+    background: linear-gradient(to right, rgb(181, 181, 124), rgb(165, 221, 123));
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px rgb(21, 23, 19);
+}
 
