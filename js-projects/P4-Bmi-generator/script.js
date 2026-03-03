@@ -146,19 +146,6 @@ calcBtn.addEventListener('click', function(e){
     }
 });
 
-//Displaying the saved user details on the web page 
-const displayUsers = document.querySelector('#display-user');
-displayUsers.textContent = JSON.stringify(userDetails, null, 2);
-
-//displaying a health tip on web page using Mock API 
-function fetchHealthTip() {
-    return new Promise(function(resolve) {
-        setTimeout(function() {
-            resolve("Drink at least 8 glasses of water today to stay hydrated!");
-        }, 1000); // 1000 milliseconds = 1 second delay
-    });
-}
-
 // 1. Grab the HTML elements
 const tipBtn = document.querySelector('#tip-btn');
 const tipDisplay = document.querySelector('#tip-display');
@@ -168,5 +155,34 @@ tipBtn.addEventListener('click', async function() {
     tipDisplay.textContent = "Loading your health tip..."
     const theTip = await fetchHealthTip();
     tipDisplay.textContent = theTip;
-
 });
+
+//displaying a health tip on web page using Mock API 
+function fetchHealthTip() {
+    return new Promise(function(resolve) {
+        setTimeout(function() {
+            resolve("Drink at least 8 glasses of water today to stay hydrated!");
+        }, 1000); // 1000 milliseconds = 1 second delay
+    });
+};
+
+
+//Displaying the saved user details on the web page 
+// const displayUsers = document.querySelector('#display-user');
+// displayUsers.textContent = JSON.stringify(userDetails, null, 2);
+
+const nameSpan = document.querySelector('#name-span');
+const genderSpan = document.querySelector('#gender-span');
+const ageSpan = document.querySelector('#age-span');
+const weightSpan = document.querySelector('#weight-span');
+const heightSpan = document.querySelector('#height-span');
+const stepSpan = document.querySelector('#step-span');
+const sleepSpan = document.querySelector('#sleep-span');
+
+nameSpan.textContent = JSON.stringify(userDetails.userName);
+genderSpan.textContent = JSON.stringify(userDetails.userGender);
+ageSpan.textContent = JSON.stringify(userDetails.userAge);
+weightSpan.textContent = JSON.stringify(userDetails.userWeight);
+heightSpan.textContent = JSON.stringify(userDetails.userHeight);
+stepSpan.textContent = JSON.stringify(userDetails.userSteps);
+sleepSpan.textContent = JSON.stringify(userDetails.userSleep);

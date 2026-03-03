@@ -210,10 +210,16 @@ button{
     transform: scale(0.90)
 }
 
-span{
-    height: 20px; 
-    width: 270px;
-    background-color: white;
+.result-display{
+    height: 25px;
+    width: 100%;
+    background: linear-gradient(to right, rgb(181, 181, 124), rgb(165, 221, 123));
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px rgb(21, 23, 19);
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .saved-user{
@@ -226,13 +232,20 @@ span{
     font-size: large;
     margin: 10px;
     padding: 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
 }
 
-.result-display{
-    height: 25px;
-    width: 100%;
-    background: linear-gradient(to right, rgb(181, 181, 124), rgb(165, 221, 123));
-    border-radius: 5px;
-    box-shadow: 3px 3px 3px rgb(21, 23, 19);
+.saved-user-details{
+    height: 200px;
+    width: 90%;
+    background: linear-gradient(to right, rgb(228, 145, 159), rgb(219, 219, 12));
+    align-self: center;
+    text-align: left;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
