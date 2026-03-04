@@ -111,10 +111,10 @@ formBtn.addEventListener('click', function (e){
     //BMR calculation using userDetails
     bmrBtn.addEventListener('click', function(e){
          const bmrSpan = document.querySelector('#bmr-span');
-        if(userDetails.userGender === 'male'){
+        if(userDetails.userGender === 'male' || userDetails.userGender === 'Male'){
             const bmrResult = 10*userDetails.userWeight + 6.25*userDetails.userHeight - 5*userDetails.userAge +5
             bmrSpan.textContent = `For male the BMR value of the user is : ${bmrResult}`;
-        }else if(userDetails.userGender === 'female'){
+        }else if(userDetails.userGender === 'female' || userDetails.userGender === 'Female'){
             const bmrResult = 10*userDetails.userWeight + 6.25*userDetails.userHeight - 5*userDetails.userAge -161;
             bmrSpan.textContent = `For female the BMR value of the user is : ${bmrResult}`;
         };
@@ -167,9 +167,9 @@ calcBtn.addEventListener('click', function(e){
 function fetchHealthTip() {
     return new Promise(function(resolve) {
         setTimeout(function() {
-            if(userDetails.userGender === 'male'){
+            if(userDetails.userGender === 'male' || userDetails.userGender === 'Male'){
                 resolve("For males drink at least 8 glasses of water daily!");
-            }else if(userDetails.userGender === 'female'){
+            }else if(userDetails.userGender === 'female' || userDetails.userGender === 'Female'){
                 resolve("For Females Drink at least 7 glasses of water daily!");
             }else{
                 resolve("In general every person has to drink at least 7 glasses of water daily!");

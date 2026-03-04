@@ -177,7 +177,7 @@ button{
 }
 .result-display{
     color: black;
-    height: 25px;
+    height: 30px;
     width: 100%;
     background: linear-gradient(to right, rgb(110, 134, 208), rgb(102, 150, 192));
     border-radius: 5px;
