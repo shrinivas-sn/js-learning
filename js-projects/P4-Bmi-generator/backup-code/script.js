@@ -78,17 +78,34 @@ formBtn.addEventListener('click', function (e){
 
 });
 
-//Calculating the BMI, BMR AND SQC result using user details
+//Calculating the BMI, BMR and SQC result using user details
     const bmrBtn = document.querySelector('#bmr-btn');
     const bmiBtn = document.querySelector('#bmi-btn');
     const sqcBtn = document.querySelector('#sqc-btn');
-
     //BMI calculation using userDetails
     bmiBtn.addEventListener('click', function(e){
-        const bmiSpan = document.querySelector('#bmi-span')
+        const bmiSpan = document.querySelector('#bmi-span');
+        const resultDisplay = document.querySelector('.result-display');
         const bmiResult = ((userDetails.userWeight)/((userDetails.userHeight*userDetails.userHeight)/10000)).toFixed(2);
         // ((weight)/((height*height)/10000)).toFixed(2)
-        bmiSpan.textContent = `The BMI value of the user is: ${bmiResult}`;
+        // bmiSpan.textContent = `The BMI value of the user is: ${bmiResult}`;
+        if(bmiResult<18.5){
+            bmiSpan.textContent = `The BMI of user is: ${bmiResult},
+            Person is Underweight`;
+            bmiSpan.style.background = 'rgb(37, 170, 218)';
+        }else if(bmiResult>=18.5 && bmiResult<24.9){
+            bmiSpan.textContent = `The BMI of user is: ${bmiResult},
+            Person is healthy`;
+            bmiSpan.style.background = 'rgb(37, 218, 70)';
+        }else if(bmiResult>=24.9 && bmiResult<29.9){
+            bmiSpan.textContent = `The BMI of user is: ${bmiResult},
+            Person is Overweight`;
+            bmiSpan.style.background = 'rgb(226, 126, 59)';
+        }else if(bmiResult>=29.9){
+            bmiSpan.textContent = `The BMI of user is: ${bmiResult},
+            Person is Obese`;
+            bmiSpan.style.background = 'rgb(230, 67, 105)';
+        };
     });
 
     //BMR calculation using userDetails
@@ -192,5 +209,16 @@ heightSpan.textContent = userDetails.userHeight;
 stepSpan.textContent = userDetails.userSteps;
 sleepSpan.textContent = userDetails.userSleep;
 
-const healthTip = fetch('https://github-api.mock.beeceptor.com/app/hook/deliveries');
-console.log(healthTip);
+
+// Tring map method in application using userDetails
+const filterDisplay = document.querySelector('#filter-box');
+
+const filterByAge = Object.values(userDetails);
+console.log(filterByAge);
+
+newFilter = filterByAge.filter(function(age){
+    if(age.userName>18){
+      return age;  
+    };
+});
+console.log(newFilter);
