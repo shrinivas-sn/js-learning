@@ -43,7 +43,8 @@ localStorage.setItem('userDetails', JSON.stringify(userDetails));
 3. Enter your details and use the calculator!
 
 ## Screenshots
-![BMI Calculator Screenshot](screenshot.png)
+![BMI Calculator Screenshot](image1.png)
+![BMI Calculator Screenshot](image2.png)
 
 ## License
 This project is open source and free to use for educational purposes.
