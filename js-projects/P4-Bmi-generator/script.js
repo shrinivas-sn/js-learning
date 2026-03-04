@@ -78,7 +78,7 @@ formBtn.addEventListener('click', function (e){
 
 });
 
-//Calculating the BMI, BMR AND SQC result using user details
+//Calculating the BMI, BMR and SQC result using user details
     const bmrBtn = document.querySelector('#bmr-btn');
     const bmiBtn = document.querySelector('#bmi-btn');
     const sqcBtn = document.querySelector('#sqc-btn');
@@ -209,5 +209,16 @@ heightSpan.textContent = userDetails.userHeight;
 stepSpan.textContent = userDetails.userSteps;
 sleepSpan.textContent = userDetails.userSleep;
 
-const healthTip = fetch('https://github-api.mock.beeceptor.com/app/hook/deliveries');
-console.log(healthTip);
+
+// Tring map method in application using userDetails
+const filterDisplay = document.querySelector('#filter-box');
+
+const filterByAge = Object.values(userDetails);
+console.log(filterByAge);
+
+newFilter = filterByAge.filter(function(age){
+    if(age.userName>18){
+      return age;  
+    };
+});
+console.log(newFilter);
