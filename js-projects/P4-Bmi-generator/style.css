@@ -176,6 +176,7 @@ button{
     margin: 10px;
 }
 .result-display{
+    color: black;
     height: 25px;
     width: 100%;
     background: linear-gradient(to right, rgb(110, 134, 208), rgb(102, 150, 192));
@@ -215,3 +216,11 @@ button{
     flex-direction: column;
     justify-content: center;
 }
+
+/* .testing-div{
+    color: black;
+    background-color: rgb(230, 67, 105);
+    height: 100px;
+    width: 100px;
+    font-size: larger;
+} */
