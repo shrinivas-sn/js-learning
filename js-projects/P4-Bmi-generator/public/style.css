@@ -1,235 +1,249 @@
-*{
-    margin:0px;
-    padding: 0px;
-    box-sizing: border-box;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 /*Body of web page styling*/
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color:  rgb(228, 223, 223);
-    background-image: url(background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(228, 223, 223);
+  background-image: url(background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-@keyframes appear{
-    from{
-        transform: scale(0.5);
-    }
-    to{
-        transform: translateX(2);
-    }
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    animation-timeline: scroll();
-    animation-name: appear;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-direction: normal;
+.div-box {
+  height: 600px;
+  width: 400px;
+  background: linear-gradient(to bottom, rgb(216, 12, 216), rgb(67, 67, 204));
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(41, 50, 110);
+  margin: 10px;
+  /* animation-name: appear;
+  animation-timeline: scroll();
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-direction: normal; */
 }
 
-.div-box{
-    height: 600px;
-    width: 400px;
-    background: linear-gradient(to bottom, rgb(216, 12, 216), rgb(67, 67, 204));
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgb(41, 50, 110);
-    margin: 10px;
+@keyframes appear {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    /* transform: scalez(100); */
+    transform: rotate(180deg);
+  }
 }
 
-.nav-bar{
-    height: 60px;
-    width: 100%;
-    color: rgb(18, 15, 15);
-    background-color:rgb(77, 75, 75);
-    background: transparent;
-    text-align: center;
-    display: flex;
-    justify-content: center;;
-    align-items: center;
-    border: 1px solid black;
-    box-shadow: 0px 1px 1px rgb(68, 137, 202);
-    font-size: 2rem;
-    font-family: sans-serif;
+.nav-bar {
+  height: 60px;
+  width: 100%;
+  color: rgb(18, 15, 15);
+  background-color: rgb(77, 75, 75);
+  background: transparent;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  box-shadow: 0px 1px 1px rgb(68, 137, 202);
+  font-size: 2rem;
+  font-family: sans-serif;
 }
 
-.header-div{
-    height: 100px;
-    width: 100%;
-    background: rgb(215, 180, 180);
-    border-radius: 10px;
-    background: transparent;
-    font-size: 1.2rem;
-    text-align: center;
+.header-div {
+  height: 100px;
+  width: 100%;
+  background: rgb(215, 180, 180);
+  border-radius: 10px;
+  background: transparent;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 /*form div styling*/
-.form-div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.1rem;
-    padding: 0px;
-    font-weight: 700;
-    font-family: sans-serif; 
-    position: relative;
+.form-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  padding: 0px;
+  font-weight: 700;
+  font-family: sans-serif;
+  position: relative;
 }
-.form-title{
-    height: 30px;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    padding: 5px;
-    text-align: center;
-    font-family: sans-serif;
-    font-size: 1.4rem;
-    font-weight: 500;
+.form-title {
+  height: 30px;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  padding: 5px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
 }
-.input-box{
-    height: 60px;
-    width: 270px;
-    border: 2px solid rgb(37, 30, 30);
-    border-radius: 10px;
-    margin: 5px;
-    padding: 5px;
-    font-size: 1rem;
-    font-weight: 400;
+.input-box {
+  height: 60px;
+  width: 270px;
+  border: 2px solid rgb(37, 30, 30);
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+  font-size: 1rem;
+  font-weight: 400;
+  animation-name: appear;
+  animation-timeline: scroll();
+  animation-duration: 1s;
+  animation-timing-function:ease-in-out;
+  animation-direction:normal;
 }
-.form-btn{
-    position:relative;
-    left: 60px;
+.form-btn {
+  position: relative;
+  left: 60px;
 }
 
-input{
-    height:30px;
-    width: 250px;
-    border: 1px solid black;
-    border-radius: 5px;
-    font-size: 1.1rem;
+input {
+  height: 30px;
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1.1rem;
 }
 
 /*bmi calculator div*/
-.div-title{
-    height: 30px;
-    width: 100%;
-    margin: 0px;
-    padding: 5px;
-    position: absolute;
-    top: 0px;
-    text-align: center;
-    font-family: sans-serif;
-    font-size: 1.4rem;
-    font-weight: 500;
+.div-title {
+  height: 30px;
+  width: 100%;
+  margin: 0px;
+  padding: 5px;
+  position: absolute;
+  top: 0px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
 }
-.main-div{
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    font-size: 1.2rem;
-    font-size: 20px;
-    font-family: sans-serif;
+.main-div {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  font-size: 1.2rem;
+  font-size: 20px;
+  font-family: sans-serif;
 }
 /* Button styling for all buttons*/
-button{
-    height: 30px;
-    width: 150px;
-    background: linear-gradient(to right, rgb(77, 178, 113), rgba(120, 239, 56, 0.775));
-    border: 2px solid black;
-    box-shadow: 2px 2px 2px;
-    border-radius: 5px;
-    transition: transform 0.10s ease-in-out;
-    font-size: 1.2rem;
-    padding: 0px;
+button {
+  height: 30px;
+  width: 150px;
+  background: linear-gradient(
+    to right,
+    rgb(77, 178, 113),
+    rgba(120, 239, 56, 0.775)
+  );
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px;
+  border-radius: 5px;
+  transition: transform 0.1s ease-in-out;
+  font-size: 1.2rem;
+  padding: 0px;
 }
-.button:hover{
-    transform: scale(0.95);
-    cursor:pointer;
+.button:hover {
+  transform: scale(0.95);
+  cursor: pointer;
 }
-.button:active{
-    transform: scale(0.90)
+.button:active {
+  transform: scale(0.9);
 }
 
 /*result div styling with all 3 result display*/
-.results-div{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+.results-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.result-box{
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    padding: 0px;
+.result-box {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 0px;
 }
 
 /* result button styling*/
-.result-btn{
-    height: 30px;
-    width: 240px;
-    background: linear-gradient(to right, rgb(77, 178, 113), rgba(120, 239, 56, 0.775));
-    border: 2px solid black;
-    box-shadow: 2px 2px 2px;
-    border-radius: 5px;
-    transition: transform 0.10s ease-in-out;
-    font-size: 1.2rem;
-    margin: 10px;
+.result-btn {
+  height: 30px;
+  width: 240px;
+  background: linear-gradient(
+    to right,
+    rgb(77, 178, 113),
+    rgba(120, 239, 56, 0.775)
+  );
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px;
+  border-radius: 5px;
+  transition: transform 0.1s ease-in-out;
+  font-size: 1.2rem;
+  margin: 10px;
 }
-.result-display{
-    color: black;
-    height: 30px;
-    width: 100%;
-    background: linear-gradient(to right, rgb(110, 134, 208), rgb(102, 150, 192));
-    border-radius: 5px;
-    box-shadow: 3px 3px 3px rgb(21, 23, 19);
-    padding: 0px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.result-display {
+  color: black;
+  height: 30px;
+  width: 100%;
+  background: linear-gradient(to right, rgb(110, 134, 208), rgb(102, 150, 192));
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgb(21, 23, 19);
+  padding: 0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.result-btn:hover{
-    transform: scale(0.95);
-    cursor:pointer;
+.result-btn:hover {
+  transform: scale(0.95);
+  cursor: pointer;
 }
-.result-btn:active{
-    transform: scale(0.90)
+.result-btn:active {
+  transform: scale(0.9);
 }
 
 /*saved user styling to display saved user details*/
-.saved-user{
-    text-align: center;
-    font-size: larger;
-    padding: 10px;
-    display:flex;
-    flex-direction: column;
-    justify-content: top;
-    align-items: center;
+.saved-user {
+  text-align: center;
+  font-size: larger;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
 }
-.saved-user-details{
-    height: 200px;
-    width: 90%;
-    background: linear-gradient(to right, rgb(228, 145, 159), rgb(219, 219, 12));
-    align-self: center;
-    text-align: left;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.saved-user-details {
+  height: 200px;
+  width: 90%;
+  background: linear-gradient(to right, rgb(228, 145, 159), rgb(219, 219, 12));
+  align-self: center;
+  text-align: left;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* .testing-div{
